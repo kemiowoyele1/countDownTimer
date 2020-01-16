@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>count down timers</title>
+</head>
+<body>
+
+<script>
+	function countDown(secs, elem) {
+
+      var element = document.getElementById('status');
+      element.innerHTML = "please wait for " + secs + " seconds";
+      secs--;
+      var timer = setTimeout('countDown(' + secs +', "'+elem+'")', 1000);
+      if (secs <= 0) {
+      	clearTimeout(timer);
+      	element.innerHTML = '<h2>count down complete</h2>';
+      	element.innerHTML += '<a href="#">click here now</a>';
+
+      }
+	};
+		
+</script>
+<div id="status"></div>
+<script>
+countDown(10, "status");
+
+</script>
+</body>
+</html>
